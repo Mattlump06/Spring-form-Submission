@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greeting</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="../static/css/style.css" th:href="@{css/style.css}" rel="stylesheet">
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1>Form</h1>
+            </div>
+            <div class="card-body">
+                <form class="greeting-form" action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+                    <p>Id: <input type="text" th:field="*{id}"/></p>
+                    <p>Message: <input type="text" th:field="*{content}"/></p>
+                    <p><input type="submit" value="Submit"/><input type="reset" value="Reset"/></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+<!--/*@thymesVar id="greeting" type="com.nerdsthink.springform.domain.Greeting"*/-->
+
+
+</body>
+</html>
